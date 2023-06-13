@@ -2,7 +2,7 @@ import {memo, useEffect, useState} from "react";
 import { Link, useParams } from 'react-router-dom';
 import AccountNav from '../AccountNav';
 import axios from "axios";
-import PlaceImg from "../PLaceImg";
+import PlaceImg from "../PlaceImg";
 
 export default function PlacesPage() {
   const [places,setPlaces] = useState([]);

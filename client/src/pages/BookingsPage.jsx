@@ -5,7 +5,7 @@ import axios from "axios";
 import {differenceInCalendarDays, format} from "date-fns";
 import {Link} from "react-router-dom";
 import BookingDates from "../BookingDates";
-import PlaceImg from "../PLaceImg";
+import PlaceImg from "../PlaceImg";
 
 export default function BookingsPage() {
   const [bookings,setBookings] = useState([]);
