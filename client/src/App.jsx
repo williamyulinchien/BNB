@@ -16,7 +16,7 @@ import ResetPage from "./pages/ResetPage";
 import EmailResetPage from "./pages/EmailResetPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 
-axios.defaults.baseURL = 'http://127.0.0.1:4000';
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
 axios.defaults.withCredentials = true;
 
 
