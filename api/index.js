@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
 //解決跨域問題
-const whitelist = ['http://127.0.0.1:5173', 'http://localhost:5173','*']; // 列出允許的網域
+const whitelist = ['http://127.0.0.1:5173', 'http://localhost:5173','*','https://bnb-yulinchi-buffaloedu.vercel.app/']; // 列出允許的網域
 
 const corsOptions = {
   credentials: true, // 這個很重要
