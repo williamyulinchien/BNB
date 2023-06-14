@@ -26,18 +26,17 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
 //解決跨域問題
-const whitelist = ['http://127.0.0.1:5173', 'http://localhost:5173','https://bnbchi.vercel.app']; // 列出允許的網域
-
+const whitelist = ['http://localhost:5173','https://bnbchi.vercel.app'];
 const corsOptions = {
-  credentials: true, // 這個很重要
-  origin: (origin, callback) => {
-    if(whitelist.includes(origin))
-      return callback(null, true)
-
-      callback(new Error('Not allowed by CORS'));
-  }
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
+  credentials: true,
 }
-
 app.use(cors(corsOptions));
 
 
