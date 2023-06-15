@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
 //解決跨域問題
-const whitelist = ['https://william-booking-app.vercel.app'];
+const whitelist = ['http://127.0.0.1:5173','https://william-booking-app.vercel.app'];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -194,7 +194,7 @@ app.post('/api/password-email', async (req, res) => {
       subject: 'Password Reset', // Subject line
       text: `You are receiving this because you (or someone else) have requested the reset of the password for your account.
           Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:
-          https://william-booking-app.vercel.app/reset-password-email?token=${token}
+          http://127.0.0.1:5173/reset-password-email?token=${token}
           If you did not request this, please ignore this email and your password will remain unchanged.`
           };
       transporter.sendMail(mailOptions, (err, info) => {
@@ -213,7 +213,7 @@ app.post('/api/password-email', async (req, res) => {
       
     })
 //    
-app.post('/api/reset-password-email', async (req, res) => {
+app.get('/api/reset-password-email', async (req, res) => {
       mongoose.connect(process.env.MONGO_URL);
       const {token,password1,password2 } = req.body;  
       if (password1 !== password2) {

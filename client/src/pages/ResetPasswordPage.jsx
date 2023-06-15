@@ -18,7 +18,7 @@ export default function ResetPasswordPage() {
         return;
       }
     try {
-      const response = await axios.post('/reset-password-email', { token, password1,password2 });
+      const response = await axios.get('/reset-password-email', { token, password1,password2 });
       alert(response.data.message);
       setRedirect(true)
     } catch (error) {
