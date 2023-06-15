@@ -7,10 +7,12 @@ export default function ResetPasswordPage() {
   const [password2, setPassword2] = useState('');
   const location = useLocation();
   const [redirect, setRedirect] = useState(false)
-  console.log(location)
+//   console.log(location)
+  console.log(password1)
+  console.log(password2)
   
   const token = new URLSearchParams(location.search).get('token');
-  console.log('token: ',token)
+//   console.log('token: ',token)
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password1 !== password2) {
