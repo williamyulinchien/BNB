@@ -194,7 +194,7 @@ app.post('/api/password-email', async (req, res) => {
       subject: 'Password Reset', // Subject line
       text: `You are receiving this because you (or someone else) have requested the reset of the password for your account.
           Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:
-          https://william-booking-app.vercel.app/api/reset-password-email?token=${token}
+          https://william-booking-app.vercel.app/reset-password-email?token=${token}
           If you did not request this, please ignore this email and your password will remain unchanged.`
           };
       transporter.sendMail(mailOptions, (err, info) => {
