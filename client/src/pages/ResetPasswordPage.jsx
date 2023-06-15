@@ -18,8 +18,9 @@ export default function ResetPasswordPage() {
         return;
       }
     try {
-      const response = await axios.post('/reset-password-email', { token, password1,password2 });
+      const response = await axios.post('/reset-password-email', {token, password1,password2 });
       alert(response.data.message);
+      console.log('hello!!!!')
       setRedirect(true)
     } catch (error) {
       alert('An error occurred while resetting your password.');
