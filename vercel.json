@@ -7,6 +7,7 @@
         "source": "/api/(.*)",
         "destination": "/api/index.js"
       },
+      // 沒加這個refresh時,除了入口網站外匯有問題;
       {
         "source": "/:path*",
         "destination": "/index.html"

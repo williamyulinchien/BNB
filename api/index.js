@@ -213,7 +213,7 @@ app.post('/api/password-email', async (req, res) => {
       
     })
 //    
-app.get('/api/reset-password-email', async (req, res) => {
+app.post('/api/reset-password-email', async (req, res) => {
       mongoose.connect(process.env.MONGO_URL);
       const {token,password1,password2 } = req.body;  
       if (password1 !== password2) {
