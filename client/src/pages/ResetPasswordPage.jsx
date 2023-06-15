@@ -8,8 +8,8 @@ export default function ResetPasswordPage() {
   const location = useLocation();
   const [redirect, setRedirect] = useState(false)
 //   console.log(location)
-  console.log(password1)
-  console.log(password2)
+//   console.log(password1)
+//   console.log(password2)
   
   const token = new URLSearchParams(location.search).get('token');
 //   console.log('token: ',token)
@@ -22,7 +22,6 @@ export default function ResetPasswordPage() {
     try {
       const response = await axios.post('/reset-password-email', {token, password1,password2 });
       alert(response.data.message);
-      console.log('hello!!!!')
       setRedirect(true)
     } catch (error) {
       alert('An error occurred while resetting your password.');
