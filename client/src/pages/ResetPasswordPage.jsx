@@ -6,7 +6,9 @@ export default function ResetPasswordPage() {
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
   const location = useLocation();
+  console.log(location)
   const [redirect, setRedirect] = useState(false)
+
 //   console.log(location)
 //   console.log(password1)
 //   console.log(password2)
