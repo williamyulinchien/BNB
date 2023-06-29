@@ -268,7 +268,7 @@ app.post('/api/logout', (req,res) => {
 });
 // upload-by-link
 console.log(__dirname)
-app.post('/upload-by-link', async (req,res) => {
+app.post('/api/upload-by-link', async (req,res) => {
   const {link} = req.body;
   if (!link) {
     return res.status(400).send({ error: 'The link is required' });
