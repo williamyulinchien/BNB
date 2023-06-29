@@ -274,14 +274,14 @@ app.post('/api/upload-by-link', async (req,res) => {
     return res.status(400).send({ error: 'The link is required' });
   }
 
-  // const newName = 'photo' + Date.now() + '.jpg';
+  const newName = 'photo' + Date.now() + '.jpg';
   // //本地端的file
   // await imageDownloader.image({
   //   url: link,
   //   dest: __dirname +'/uploads/' + newName,
   // });
 
-  res.json(newName)
+  // res.json(newName)
   await imageDownloader.image({
     url: link,
     dest: '/tmp/' + newName,
