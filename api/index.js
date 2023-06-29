@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
 //解決跨域問題
-const whitelist = ['http://127.0.0.1:5173','https://bnb-theta.vercel.app/'];
+const whitelist = ['http://127.0.0.1:5173','https://bnb-theta.vercel.app'];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
